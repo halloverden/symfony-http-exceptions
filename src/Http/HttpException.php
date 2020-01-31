@@ -3,12 +3,14 @@
 
 namespace HalloVerden\HttpExceptions\Http;
 
+use HalloVerden\HttpExceptions\DataExceptionInterface;
+
 /**
  * Class HttpException
  *
  * @package HalloVerden\HttpExceptions\Http
  */
-class HttpException extends \Symfony\Component\HttpKernel\Exception\HttpException {
+class HttpException extends \Symfony\Component\HttpKernel\Exception\HttpException implements DataExceptionInterface {
   /**
    * @var array|null
    */
