@@ -21,46 +21,22 @@ class HttpException extends \Symfony\Component\HttpKernel\Exception\HttpExceptio
 
   /**
    * @param int        $statusCode
-   * @param string     $message  The internal exception message
+   * @param string     $message The internal exception message
    * @param array|null $data
-   * @param \Exception $previous The previous exception
+   * @param \Throwable $previous The previous exception
    * @param array      $headers
-   * @param int        $code     The internal exception code
+   * @param int        $code The internal exception code
    */
-  public function __construct( int $statusCode, $message = null, array $data = null, \Exception $previous = null, array $headers = [], $code = 0 ) {
+  public function __construct( int $statusCode, $message = null, array $data = null, \Throwable $previous = null, array $headers = [], $code = 0 ) {
     $this->data = $data;
 
     parent::__construct($statusCode, $message, $previous, $headers, $code);
   }
 
-//  private function checkForErrors() {
-//    if (!$this->data || !is_array($this->data) || !array_key_exists('errors', $this->data)) {
-//      return;
-//    }
-//
-//    $e = $this->data['errors'];
-//    $errors = [];
-//
-//    if ($e instanceof ConstraintViolationList) {
-//      foreach ($e as $constraintViolation) {
-//        /* @var $constraintViolation ConstraintViolation */
-//        $errors[] = [
-//          'code' => $constraintViolation->getCode(),
-//          'message' => $constraintViolation->getMessage(),
-//          'path' => $constraintViolation->getPropertyPath()
-//        ];
-//      }
-//
-//      $this->data['errors'] = $errors;
-//    }
-//  }
-
   /**
    * @return array|null
    */
   public function getData(): ?array {
-//    $this->checkForErrors();
-
     return $this->data;
   }
 
