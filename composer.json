@@ -13,7 +13,11 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.2",
-        "symfony/http-kernel": "^4.4|^5.0"
+        "symfony/http-kernel": "^4.4|^5.0",
+        "ext-json": "*"
+    },
+    "suggest": {
+        "symfony/validator": "for ValidationException"
     },
     "autoload": {
         "psr-4": {
