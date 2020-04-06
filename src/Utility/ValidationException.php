@@ -31,8 +31,8 @@ class ValidationException extends BadRequestException {
       /* @var $violation ConstraintViolationInterface*/
       $d = new ValidationExceptionViolation($violation->getInvalidValue(), $violation->getMessage(), $violation->getPropertyPath());
 
-      if ($violation instanceof ConstraintViolation && null !== ($code = $violation->getCode())) {
-        $d->setErrorName($violation->getConstraint()::getErrorName($code));
+      if ($violation instanceof ConstraintViolation && null !== ($violationCode = $violation->getCode())) {
+        $d->setErrorName($violation->getConstraint()::getErrorName($violationCode));
       }
 
       $v[] = $d->toArray();
