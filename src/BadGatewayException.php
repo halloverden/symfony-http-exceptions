@@ -21,7 +21,7 @@ class BadGatewayException extends BadGatewayHttpException {
    * @param \Exception|null $previous
    * @param int $code
    */
-  public function __construct(?string $message, array $data = [], \Exception $previous = null, $code = 0) {
+  public function __construct(string $message = null, array $data = [], \Exception $previous = null, $code = 0) {
     $message = $message ?: self::MESSAGE;
 
     parent::__construct($message, $data, $previous, $code);
