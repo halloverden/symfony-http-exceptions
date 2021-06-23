@@ -6,7 +6,7 @@ namespace HalloVerden\HttpExceptions;
 use HalloVerden\HttpExceptions\Http\UnprocessableEntityHttpException;
 
 /**
- * Class BadRequestException
+ * Class UnprocessableEntityException
  *
  * @package HalloVerden\HttpExceptions
  */
