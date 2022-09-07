@@ -9,35 +9,19 @@ namespace HalloVerden\HttpExceptions\Utility;
  * @package HalloVerden\RequestEntityBundle\Exception
  */
 class ValidationExceptionViolation {
-
-  /**
-   * @var string|null
-   */
-  private $errorName;
-
-  /**
-   * @var mixed
-   */
-  private $invalidValue;
-
-  /**
-   * @var string|null
-   */
-  private $message;
-
-  /**
-   * @var string|null
-   */
-  private $propertyPath;
+  private ?string $errorName = null;
+  private mixed $invalidValue;
+  private string $message;
+  private string $propertyPath;
 
   /**
    * ValidationExceptionViolation constructor.
    *
-   * @param $invalidValue
+   * @param mixed  $invalidValue
    * @param string $message
    * @param string $propertyPath
    */
-  public function __construct($invalidValue, string $message, string $propertyPath) {
+  public function __construct(mixed $invalidValue, string $message, string $propertyPath) {
     $this->invalidValue = $invalidValue;
     $this->message = $message;
     $this->propertyPath = $propertyPath;
@@ -67,7 +51,7 @@ class ValidationExceptionViolation {
   /**
    * @param mixed $invalidValue
    */
-  public function setInvalidValue($invalidValue): void {
+  public function setInvalidValue(mixed $invalidValue): void {
     $this->invalidValue = $invalidValue;
   }
 
