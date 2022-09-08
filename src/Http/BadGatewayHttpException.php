@@ -15,12 +15,12 @@ class BadGatewayHttpException extends HttpException {
   /**
    * BadGatewayHttpException constructor.
    *
-   * @param null            $message
+   * @param string|null     $message
    * @param array|null      $data
-   * @param \Exception|null $previous
+   * @param \Throwable|null $previous
    * @param int             $code
    */
-  public function __construct( $message = null, array $data = null, \Exception $previous = null, $code = 0 ) {
-    parent::__construct( self::HTTP_STATUS_CODE, $message, $data, $previous, [], $code );
+  public function __construct(string $message = null, array $data = null, \Throwable $previous = null, int $code = 0) {
+    parent::__construct( self::HTTP_STATUS_CODE, $message, $data, $previous, [], $code);
   }
 }

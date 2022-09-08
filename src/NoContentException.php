@@ -14,10 +14,10 @@ class NoContentException extends NoContentHttpException {
   /**
    * NoContentException constructor.
    *
-   * @param \Throwable $previous
-   * @param int        $code
+   * @param \Throwable|null $previous
+   * @param int             $code
    */
-  public function __construct(\Throwable $previous = null, $code = 0) {
+  public function __construct(\Throwable $previous = null, int $code = 0) {
     parent::__construct(null, $previous, $code);
   }
 
