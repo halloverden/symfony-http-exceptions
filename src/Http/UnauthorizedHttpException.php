@@ -3,11 +3,6 @@
 
 namespace HalloVerden\HttpExceptions\Http;
 
-/**
- * Class UnauthorizedHttpException
- *
- * @package HalloVerden\HttpExceptions\Http
- */
 class UnauthorizedHttpException extends HttpException {
   const HTTP_STATUS_CODE = 401;
 
@@ -17,7 +12,7 @@ class UnauthorizedHttpException extends HttpException {
    * @param \Throwable|null $previous The previous exception
    * @param int             $code The internal exception code
    */
-  public function __construct(string $message = null, array $data = null, \Throwable $previous = null, $code = 0) {
+  public function __construct(?string $message = null, ?array $data = null, ?\Throwable $previous = null, $code = 0) {
     $headers = [
       'WWW-Authenticate' => 'error="'.$message.'"',
     ];

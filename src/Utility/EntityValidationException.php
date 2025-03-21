@@ -9,22 +9,9 @@ use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationInterface;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 
-/**
- * Class ValidationException
- *
- * @package HalloVerden\RequestEntityBundle\Exception
- */
 class EntityValidationException extends UnprocessableEntityException {
 
-  /**
-   * EntityValidationException constructor.
-   *
-   * @param ConstraintViolationListInterface $violationList
-   * @param string                           $message
-   * @param \Exception|null                  $previous
-   * @param int                              $code
-   */
-  public function __construct(ConstraintViolationListInterface $violationList, string $message = "VALIDATION_ERROR", \Exception $previous = null, int $code = 0) {
+  public function __construct(ConstraintViolationListInterface $violationList, string $message = "VALIDATION_ERROR", ?\Exception $previous = null, int $code = 0) {
     $v = [];
 
     foreach ($violationList as $violation) {
